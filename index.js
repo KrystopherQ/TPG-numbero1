@@ -6,6 +6,36 @@ const Manager = require('./lib/Manager')
 const TPG = require('./src/TPG')
 
 members = []
+
+function begin() {
+    inquirer.prompt([{
+        type: 'list',
+        message: "Who would you like to create first?",
+        name: 'team',
+        choices: [
+            'Engineer',
+            'Intern',
+            'Manager',
+        ]
+    }]).then(function(selectedChoice) {
+        switch (selectedChoice.team) {
+            case 'Manager':
+                managerQs();
+                break;
+            case 'Engineer':
+                engineerQs();
+                break;
+            case 'Intern':
+                internQs();
+                break;
+            default:
+                teamCreatedHtml()
+
+        }
+    })
+}
+
+
 const managerQs = () => {
     inquirer.prompt([{
                 type: 'input',
@@ -32,6 +62,7 @@ const managerQs = () => {
                 message: "Who would you like to add next?",
                 name: 'team',
                 choices: [
+                    'Manager',
                     'Engineer',
                     'Intern',
                     'I am finished',
@@ -42,6 +73,9 @@ const managerQs = () => {
             const manager = new Manager(managerAs.id, managerAs.name, managerAs.email, managerAs.office)
             members.push(manager)
             switch (managerAs.team) {
+                case 'Manager':
+                    managerQs();
+                    break;
                 case 'Engineer':
                     engineerQs();
                     break;
@@ -79,6 +113,7 @@ const engineerQs = () => {
                 message: "Who would you like to add next?",
                 name: 'team',
                 choices: [
+                    'Manager',
                     'Engineer',
                     'Intern',
                     'I am finished',
@@ -89,6 +124,9 @@ const engineerQs = () => {
             const engineer = new Engineer(engineerAs.id, engineerAs.name, engineerAs.email, engineerAs.github)
             members.push(engineer)
             switch (engineerAs.team) {
+                case 'Manager':
+                    managerQs();
+                    break;
                 case 'Engineer':
                     engineerQs();
                     break;
@@ -126,6 +164,7 @@ const internQs = () => {
                 message: "Who would you like to add next?",
                 name: 'team',
                 choices: [
+                    'Manager',
                     'Engineer',
                     'Intern',
                     'I am finished',
@@ -136,6 +175,9 @@ const internQs = () => {
             const intern = new Intern(internAs.id, internAs.name, internAs.email, internAs.school)
             members.push(intern)
             switch (internAs.team) {
+                case 'Manager':
+                    managerQs();
+                    break;
                 case 'Engineer':
                     engineerQs();
                     break;
@@ -146,7 +188,7 @@ const internQs = () => {
         })
 }
 
-managerQs();
+begin();
 
 function teamCreatedHtml() {
     fs.writeFile('./dist/index.html', data, (err) =>
