@@ -7,12 +7,10 @@ const TPG = require('./src/TPG')
 
 members = []
 const managerQs = () => {
-    inquirer
-        .prompt([{
+    inquirer.prompt([{
                 type: 'input',
                 message: "What is the Manager's name?",
                 name: 'name',
-
             },
             {
                 type: 'input',
@@ -50,15 +48,12 @@ const managerQs = () => {
                 case 'Intern':
                     internQs();
                     break;
-                default:
-                    writeToFile('./dist/index.html', TPG(members))
             }
         })
 }
 
 const engineerQs = () => {
-    inquirer
-        .prompt([{
+    inquirer.prompt([{
                 type: 'input',
                 message: "What is the Engineer's name?",
                 name: 'name',
@@ -100,15 +95,12 @@ const engineerQs = () => {
                 case 'Intern':
                     internQs();
                     break;
-                default:
-                    writeToFile('./dist/index.html', TPG(members))
             }
         })
 }
 
 const internQs = () => {
-    inquirer
-        .prompt([{
+    inquirer.prompt([{
                 type: 'input',
                 message: "What is the Intern's name?",
                 name: 'name',
@@ -150,14 +142,14 @@ const internQs = () => {
                 case 'Intern':
                     internQs();
                     break;
-                default:
-                    writeToFile('./dist/index.html', TPG(members))
             }
         })
 }
 
 managerQs();
 
-fs.writeFile('index.html', TPG, (err) =>
-    err ? console.log(err) : console.log()
-)
+function teamCreatedHtml() {
+    fs.writeFile('./dist/index.html', data, (err) =>
+        err ? console.log(err) : console.log()
+    )
+}
