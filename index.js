@@ -30,7 +30,7 @@ function begin() {
                 internQs();
                 break;
             default:
-                teamCreatedHtml()
+                teamCreatedHtml('./dist/index.html', TPG(members))
 
         }
     })
@@ -83,7 +83,9 @@ const managerQs = () => {
                 case 'Intern':
                     internQs();
                     break;
-                    begin()
+                default:
+                    teamCreatedHtml('./dist/index.html', TPG(members))
+
             }
         })
 }
@@ -135,7 +137,9 @@ const engineerQs = () => {
                 case 'Intern':
                     internQs();
                     break;
-                    begin()
+                default:
+                    teamCreatedHtml('./dist/index.html', TPG(members))
+
             }
         })
 }
@@ -187,14 +191,16 @@ const internQs = () => {
                 case 'Intern':
                     internQs();
                     break;
-                    begin()
+                default:
+                    teamCreatedHtml('./dist/index.html', TPG(members))
+
             }
         })
 }
 
-
 function teamCreatedHtml() {
-    fs.writeFile(indexHTML, TPG(members), (err) =>
+    var load = TPG(members)
+    fs.writeFile('./dist/index.html', load, (err) =>
         err ? console.log(err) : console.log()
     )
 }

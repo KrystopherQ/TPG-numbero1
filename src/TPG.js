@@ -8,7 +8,7 @@ function createTeam(members) {
         const membersArr = members[i]
         switch (membersArr.getRole()) {
             case 'Engineer':
-                const engineer = new Engineer(membersArr.id, membersArr.name, membersArr.email, membersArr.office);
+                const engineer = new Engineer(membersArr.id, membersArr.name, membersArr.email, membersArr.github);
                 card.push(genEngineer(engineer));
                 break;
             case 'Intern':
@@ -16,7 +16,7 @@ function createTeam(members) {
                 card.push(genIntern(intern));
                 break;
             case 'Manager':
-                const manager = new Manager(membersArr.id, membersArr.name, membersArr.email, membersArr.school);
+                const manager = new Manager(membersArr.id, membersArr.name, membersArr.email, membersArr.office);
                 card.push(genManager(manager));
                 break;
         }
@@ -28,13 +28,13 @@ let genEngineer = (Engineer) => {
     return `
     <div class="card text-white bg-info m-5" style="max-width: 18rem;">
     <div class="card-header">
-        <h2>${Engineer.getName()}</h2>
-        <h3>${Engineer.getRole()}</h3>
+        <h2>${Engineer.getName}</h2>
+        <h3>${Engineer.getRole}</h3>
     </div>
     <div class="card-body">
-        <p>ID:${Engineer.getId()}</p>
-        <p>Email:${Engineer.getEmail()}</p>
-        <p>Github:${Engineer.getGitHub()}</p>
+        <p>ID:${Engineer.getId}</p>
+        <p>Email:${Engineer.getEmail}</p>
+        <p>Github:${Engineer.getGitHub}</p>
     </div>
 </div>
 `
@@ -43,13 +43,13 @@ let genIntern = (Intern) => {
     return `
     <div class="card text-white bg-info m-5" style="max-width: 18rem;">
     <div class="card-header">
-        <h2>${Intern.getName()}</h2>
-        <h3>${Intern.getRole()}</h3>
+        <h2>${Intern.getName}</h2>
+        <h3>${Intern.getRole}</h3>
     </div>
     <div class="card-body">
-        <p>ID:${Intern.getId()}</p>
-        <p>Email:${Intern.getEmail()}</p>
-        <p>School:${Intern.getSchool()}</p>
+        <p>ID:${Intern.getId}</p>
+        <p>Email:${Intern.getEmail}</p>
+        <p>School:${Intern.getSchool}</p>
     </div>
 </div>
 `
@@ -58,13 +58,13 @@ let genManager = (Manager) => {
     return `
     <div class="card text-white bg-info m-5" style="max-width: 18rem;">
     <div class="card-header">
-        <h2>${Manager.getName()}</h2>
-        <h3>${Manager.getRole()}</h3>
+        <h2>${Manager.getName}</h2>
+        <h3>${Manager.getRole}</h3>
     </div>
     <div class="card-body">
-        <p>ID:${Manager.getId()}</p>
-        <p>Email:${Manager.getEmail()}</p>
-        <p>Office Number:${Manager.getOffice()}</p>
+        <p>ID:${Manager.getId}</p>
+        <p>Email:${Manager.getEmail}</p>
+        <p>Office Number:${Manager.getOffice}</p>
     </div>
 </div>
 `
