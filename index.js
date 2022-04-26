@@ -45,10 +45,10 @@ const managerQs = () => {
             members.push(manager)
             switch (managerAs.team) {
                 case 'Engineer':
-                    engineerQs()
+                    engineerQs();
                     break;
                 case 'Intern':
-                    internQs()
+                    internQs();
                     break;
                 default:
                     writeToFile('./dist/index.html', TPG(members))
@@ -95,10 +95,10 @@ const engineerQs = () => {
             members.push(engineer)
             switch (engineerAs.team) {
                 case 'Engineer':
-                    engineerQs()
+                    engineerQs();
                     break;
                 case 'Intern':
-                    internQs()
+                    internQs();
                     break;
                 default:
                     writeToFile('./dist/index.html', TPG(members))
@@ -145,10 +145,10 @@ const internQs = () => {
             members.push(intern)
             switch (internAs.team) {
                 case 'Engineer':
-                    engineerQs()
+                    engineerQs();
                     break;
                 case 'Intern':
-                    internQs()
+                    internQs();
                     break;
                 default:
                     writeToFile('./dist/index.html', TPG(members))
@@ -156,7 +156,7 @@ const internQs = () => {
         })
 }
 
-managerQs()
+managerQs();
 
 fs.writeFile('index.html', TPG, (err) =>
     err ? console.log(err) : console.log()
