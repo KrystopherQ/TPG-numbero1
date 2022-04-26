@@ -4,6 +4,7 @@ const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const Manager = require('./lib/Manager')
 const TPG = require('./src/TPG')
+const indexHTML = require('./dist/index.html')
 
 members = []
 
@@ -13,9 +14,9 @@ function begin() {
         message: "Who would you like to create first?",
         name: 'team',
         choices: [
+            'Manager',
             'Engineer',
             'Intern',
-            'Manager',
         ]
     }]).then(function(selectedChoice) {
         switch (selectedChoice.team) {
@@ -82,6 +83,7 @@ const managerQs = () => {
                 case 'Intern':
                     internQs();
                     break;
+                    begin()
             }
         })
 }
@@ -133,6 +135,7 @@ const engineerQs = () => {
                 case 'Intern':
                     internQs();
                     break;
+                    begin()
             }
         })
 }
@@ -184,14 +187,15 @@ const internQs = () => {
                 case 'Intern':
                     internQs();
                     break;
+                    begin()
             }
         })
 }
 
-begin();
 
 function teamCreatedHtml() {
-    fs.writeFile('./dist/index.html', data, (err) =>
+    fs.writeFile(indexHTML, TPG(members), (err) =>
         err ? console.log(err) : console.log()
     )
 }
+begin()
