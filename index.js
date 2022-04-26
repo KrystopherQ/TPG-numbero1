@@ -55,7 +55,7 @@ const managerQs = () => {
             },
             {
                 type: 'input',
-                message: "What is the Engineer's office number?",
+                message: "What is the Manager's office number?",
                 name: 'office',
             },
             {
@@ -201,7 +201,7 @@ const internQs = () => {
 function teamCreatedHtml() {
     var load = TPG(members)
     fs.writeFile('./dist/index.html', load, (err) =>
-        err ? console.log(err) : console.log()
+        err ? console.log(err) : console.log("You're Team Profile has been created!")
     )
 }
 begin()
