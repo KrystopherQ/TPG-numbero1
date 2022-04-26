@@ -3,7 +3,7 @@
 
 
 ## Description 
-  
+   The Team Project Generator(TPG) generates an html of a team you put together through node.js.
 ## Table of Contents
  * [Usage](#usage)
  * [Questions](#questions)
@@ -13,6 +13,22 @@
 
             
 ## Usage 
+You can use this app to quickly and effeciently create a team with different types of roles. To begin select a starting profile.
+![Starter question](./assets/start.png)
+
+Once you selected a starting profile you will be asked specific questions to the profile selected. 
+
+![questionaire](./assets/select.png)
+
+Once finished with the questions you will have a selection menu to choose from. 
+
+![select menu](./assets/selection.png)
+
+If you are finsihed building your team profile select 'I am finshed' and a index.html will be generated with you team profiles.
+
+![Created html](./assets/created.png)
+
+
 
 ## License
 MIT License
