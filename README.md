@@ -14,6 +14,7 @@
             
 ## Usage 
 You can use this app to quickly and effeciently create a team with different types of roles. To begin select a starting profile.
+
 ![Starter question](./assets/start.png)
 
 Once you selected a starting profile you will be asked specific questions to the profile selected. 
