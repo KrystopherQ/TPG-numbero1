@@ -25,7 +25,7 @@ Once finished with the questions you will have a selection menu to choose from.
 
 ![select menu](./assets/selection.png)
 
-If you are finsihed building your team profile select 'I am finshed' and a index.html will be generated with you team profiles.
+If you are finsihed building your team profile select 'I am finshed' and an index.html will be generated with you team profiles.
 
 ![Created html](./assets/created.png)
 
