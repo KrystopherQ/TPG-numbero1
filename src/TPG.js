@@ -12,7 +12,7 @@ function createTeam(members) {
                 card.push(genEngineer(engineer));
                 break;
             case 'Intern':
-                const intern = new Intern(membersArr.id, membersArr.name, membersArr.email, membersArr.github);
+                const intern = new Intern(membersArr.id, membersArr.name, membersArr.email, membersArr.school);
                 card.push(genIntern(intern));
                 break;
             case 'Manager':
@@ -24,47 +24,47 @@ function createTeam(members) {
     return card.join(``)
 }
 
-let genEngineer = (Engineer) => {
+let genEngineer = (engineer) => {
     return `
     <div class="card text-white bg-info m-5" style="max-width: 18rem;">
     <div class="card-header">
-        <h2>${Engineer.getName}</h2>
-        <h3>${Engineer.getRole}</h3>
+        <h2>${engineer.getName()}</h2>
+        <h3>${engineer.getRole()}</h3>
     </div>
     <div class="card-body">
-        <p>ID:${Engineer.getId}</p>
-        <p>Email:${Engineer.getEmail}</p>
-        <p>Github:${Engineer.getGitHub}</p>
+        <p>ID: ${engineer.getId()}</p>
+        <p>Email: ${engineer.getEmail()}</p>
+        <p>Github: ${engineer.getGitHub()}</p>
     </div>
 </div>
 `
 }
-let genIntern = (Intern) => {
+let genIntern = (intern) => {
     return `
     <div class="card text-white bg-info m-5" style="max-width: 18rem;">
     <div class="card-header">
-        <h2>${Intern.getName}</h2>
-        <h3>${Intern.getRole}</h3>
+        <h2>${intern.getName()}</h2>
+        <h3>${intern.getRole()}</h3>
     </div>
     <div class="card-body">
-        <p>ID:${Intern.getId}</p>
-        <p>Email:${Intern.getEmail}</p>
-        <p>School:${Intern.getSchool}</p>
+        <p>ID: ${intern.getId()}</p>
+        <p>Email: ${intern.getEmail()}</p>
+        <p>School: ${intern.getSchool()}</p>
     </div>
 </div>
 `
 }
-let genManager = (Manager) => {
+let genManager = (manager) => {
     return `
     <div class="card text-white bg-info m-5" style="max-width: 18rem;">
     <div class="card-header">
-        <h2>${Manager.getName}</h2>
-        <h3>${Manager.getRole}</h3>
+        <h2>${manager.getName()}</h2>
+        <h3>${manager.getRole()}</h3>
     </div>
     <div class="card-body">
-        <p>ID:${Manager.getId}</p>
-        <p>Email:${Manager.getEmail}</p>
-        <p>Office Number:${Manager.getOffice}</p>
+        <p>ID: ${manager.getId()}</p>
+        <p>Email: ${manager.getEmail()}</p>
+        <p>Office Number: ${manager.getOffice()}</p>
     </div>
 </div>
 `

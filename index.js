@@ -4,7 +4,7 @@ const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const Manager = require('./lib/Manager')
 const TPG = require('./src/TPG')
-const indexHTML = require('./dist/index.html')
+    // const indexHTML = require('./dist/index.html')
 
 members = []
 
