@@ -29,6 +29,13 @@ If you are finished building your team profile select 'I am finshed' and an inde
 
 ![Created html](./assets/created.png)
 
+Here is a quick demo of how to do it and preview of the site.
+
+![demo gif](./assets/demo.gif)
+
+![site preview](./assets/site.png)
+
+
 
 
 ## License
